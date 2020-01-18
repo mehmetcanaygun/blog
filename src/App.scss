@@ -1,0 +1,210 @@
+// Variables
+$primary-color: #1da0a0;
+$secondary-color: #114963;
+$dark-color: #333;
+$light-color: #e4e4e4;
+$info-color: #dab928;
+$danger-color: #c22323;
+$success-color: #3caf25;
+$navbar-height: 70px;
+
+// Global Settings
+* {
+  font-family: "Questrial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light-color;
+  background: url("./home-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+button:focus,
+input:focus {
+  outline: 0 !important;
+}
+
+button:active,
+input:active {
+  outline: none;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Utility Classes
+.box-shadow {
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.text-shadow {
+  text-shadow: 0 3px 5px #000;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem 5%;
+}
+
+// Navbar
+.navbar {
+  width: 100%;
+  height: $navbar-height;
+  padding: 0 5%;
+  background-color: rgba($light-color, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .navbar__logo {
+    color: $dark-color;
+    font-size: 2rem;
+  }
+
+  .navbar__button {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 24px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    div {
+      position: absolute;
+      height: 4px;
+      background-color: $dark-color;
+      border-radius: 3px;
+    }
+
+    .top {
+      top: 0;
+      width: 34px;
+      transition: all 0.3s;
+    }
+
+    .middle {
+      top: 10px;
+      width: 26px;
+      transition: all 0.3s;
+    }
+
+    .bottom {
+      top: 20px;
+      width: 40px;
+      transition: all 0.3s;
+    }
+  }
+
+  .navbar__button.toggled {
+    .top {
+      width: 40px;
+      top: 10px;
+      transform: rotateZ(-225deg);
+      transition: all 0.3s 0.06s;
+    }
+
+    .middle {
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .bottom {
+      width: 40px;
+      top: 10px;
+      transform: rotateZ(225deg);
+      transition: all 0.3s 0.06s;
+    }
+  }
+}
+
+// Sidebar
+.sidebar-left {
+  width: 50%;
+  height: calc(100vh - 70px);
+  background-color: rgba($dark-color, 0.8);
+  color: $light-color;
+  position: absolute;
+  left: -50%;
+  top: $navbar-height;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-size: 2rem;
+    color: $light-color;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+
+  a:hover {
+    color: $primary-color;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $primary-color;
+  }
+
+  a:hover::after {
+    width: 100%;
+    transition: 0.3s;
+  }
+}
+
+.sidebar-left.toggled {
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+// .sidebar-right {
+//   width: 50%;
+//   height: calc(100vh - 70px);
+//   background-color: $secondary-color;
+//   color: $light-color;
+//   position: absolute;
+//   top: -100%;
+//   left: 50%;
+//   z-index: -1;
+// }
+
+// .sidebar-right.toggled {
+//   top: $navbar-height;
+//   transition: 0.5s ease-in-out;
+// }
+
+// Home Page
