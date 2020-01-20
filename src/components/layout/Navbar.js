@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="middle"></div>
         <div className="bottom"></div>
       </button>
-      <SidebarLeft toggle={sideBarToggled} />
+      <SidebarLeft toggle={sideBarToggled} toggleSideBar={toggleSideBar} />
     </nav>
   );
 };
