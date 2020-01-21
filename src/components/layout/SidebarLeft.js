@@ -27,40 +27,13 @@ const SidebarLeft = props => {
         About Me
       </Link>
       <Link
-        to="/cinema"
+        to="/archive"
         className="text-shadow"
         onClick={() => {
           toggleBar();
         }}
       >
-        Cinema
-      </Link>
-      <Link
-        to="/television"
-        className="text-shadow"
-        onClick={() => {
-          toggleBar();
-        }}
-      >
-        Television
-      </Link>
-      <Link
-        to="/games"
-        className="text-shadow"
-        onClick={() => {
-          toggleBar();
-        }}
-      >
-        Games
-      </Link>
-      <Link
-        to="/books"
-        className="text-shadow"
-        onClick={() => {
-          toggleBar();
-        }}
-      >
-        Books
+        Archive
       </Link>
     </div>
   );

@@ -206,6 +206,44 @@ a {
   transition: 0.5s ease-in-out;
 }
 
+// Loading
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loading__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    div {
+      width: 80px;
+      height: 80px;
+      border: 5px solid $secondary-color;
+      background-color: rgba($light-color, 0.5);
+
+      &:first-child {
+        border-top-right-radius: 50%;
+        animation: loading 0.6s ease-in-out infinite;
+      }
+      &:nth-child(2) {
+        border-top-left-radius: 50%;
+        animation: loading 0.6s ease-in-out 0.2s infinite;
+      }
+      &:nth-child(3) {
+        border-bottom-right-radius: 50%;
+        animation: loading 0.6s ease-in-out 0.4s infinite;
+      }
+      &:last-child {
+        border-bottom-left-radius: 50%;
+        animation: loading 0.6s ease-in-out 0.6s infinite;
+      }
+    }
+  }
+}
+
 // .sidebar-right {
 //   width: 50%;
 //   height: calc(100vh - 70px);
@@ -346,10 +384,8 @@ a {
 
     .links {
       div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         a {
+          margin-right: 2rem;
           i {
             color: $dark-color;
             font-size: 3rem;
@@ -389,6 +425,72 @@ a {
   }
 }
 
+// Archive
+.archive {
+  .arc__categories {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    button {
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.2rem;
+      border: none;
+      border-bottom: 2px solid $dark-color;
+      background-color: rgba($light-color, 0.5);
+      padding: 0.5rem 1rem;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      box-shadow: 0 2px 5px #000;
+      transition: 0.3s;
+
+      &:first-child {
+        background-color: $twitter-color;
+      }
+      &:nth-child(2) {
+        background-color: $danger-color;
+      }
+      &:nth-child(3) {
+        background-color: $info-color;
+      }
+      &:nth-child(4) {
+        background-color: $light-color;
+      }
+      &:last-child {
+        background-color: $success-color;
+      }
+    }
+  }
+
+  .arc__wrapper {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: $light-color;
+    border-radius: 6px;
+
+    div {
+      border: 1px dashed $dark-color;
+      padding: 1rem;
+      margin-bottom: 1rem;
+
+      .post-title {
+        color: $secondary-color;
+      }
+
+      .post-date {
+        color: $primary-color;
+      }
+
+      .post-body {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
 // Animations
 @keyframes quote-left {
   from {
@@ -405,5 +507,14 @@ a {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes loading {
+  from {
+    background-color: rgba($light-color, 0.5);
+  }
+  to {
+    background-color: rgba($dark-color, 0.5);
   }
 }
