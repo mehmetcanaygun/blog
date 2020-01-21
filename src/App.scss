@@ -518,3 +518,39 @@ a {
     background-color: rgba($dark-color, 0.5);
   }
 }
+
+// Media Query
+@media (max-width: 768px) {
+  .sidebar-left {
+    width: 100%;
+    left: -100%;
+  }
+
+  .about {
+    .about__wrapper {
+      .bio {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .archive {
+    .arc__categories {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid $dark-color;
+        background-color: rgba($light-color, 0.5);
+        padding: 0.3rem;
+        transition: 0.3s;
+      }
+    }
+  }
+}

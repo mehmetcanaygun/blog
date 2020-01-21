@@ -43,7 +43,7 @@ const Archive = () => {
             setCategoryPosts(2);
           }}
         >
-          Video Games
+          Games
         </button>
         <button
           onClick={() => {
